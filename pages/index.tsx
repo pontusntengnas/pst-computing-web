@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { fetchProfile } from "../data-fetchers/profile/profile-fetcher";
 import { Main } from "../features/main/main";
 import { Profile } from "../types/types";
 
@@ -22,12 +23,9 @@ const Home: NextPage<Props> = (props) => {
 };
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:8080/profile");
-  const profile: Profile = await res.json();
-
   return {
     props: {
-      profile,
+      profile: await fetchProfile(),
     },
   };
 }

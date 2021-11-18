@@ -1,9 +1,9 @@
 import type { AppProps } from "next/app";
-import "../styles/animations.css";
+import "../features/core-ui/animations/animations.css";
 import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function PstComputingApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }
 
-export default MyApp;
+export default PstComputingApp;

@@ -2,8 +2,15 @@ import * as React from "react";
 
 interface Props {
   width?: number;
+  height?: number;
 }
 
-export const Space: React.VFC<Props> = ({ width }) => {
-  return <div style={{ width: width ? width : 2, display: "flex" }}></div>;
-};
+export const Space: React.VFC<Props> = ({ width, height }) => (
+  <div
+    style={{
+      minWidth: width ? width : 2,
+      minHeight: height ? height : 2,
+      display: "flex",
+    }}
+  ></div>
+);

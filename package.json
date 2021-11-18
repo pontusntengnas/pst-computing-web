@@ -1,12 +1,13 @@
 {
   "name": "pst-computing-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "yarn ver && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ver": "echo \"NEXT_PUBLIC_APP_VERSION=$(cat package.json | jq .version)\" > .env.local"
   },
   "dependencies": {
     "next": "12.0.3",

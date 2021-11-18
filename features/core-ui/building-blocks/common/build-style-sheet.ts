@@ -7,7 +7,7 @@ export const buildStyleSheet = (
   let style = {};
 
   for (const [key, value] of Object.entries(props)) {
-    if (key === "children") {
+    if (key === "children" || Array.isArray(value)) {
       continue;
     }
 
