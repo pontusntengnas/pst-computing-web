@@ -10,6 +10,8 @@ export interface BuildingBlockProps {
   gap?: number;
   flex?: number;
   height?: string;
+  width?: string;
+  justifyContent?: string;
   classes?: Array<string>;
   animations?: Array<Animation>;
 }

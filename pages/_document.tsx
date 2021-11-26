@@ -1,7 +1,7 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
 import React from "react";
 
-class MyDocument extends Document {
+class PstComputingDocument extends Document {
   render() {
     return (
       <Html>
@@ -20,4 +20,4 @@ class MyDocument extends Document {
   }
 }
 
-export default MyDocument;
+export default PstComputingDocument;

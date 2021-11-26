@@ -1,11 +1,3 @@
 .skillBox {
-  transition: 0.5s;
-  background-color: var(--white);
-  transition-timing-function: ease-out;
   border-radius: 18px;
-}
-
-.skillBox:hover {
-  opacity: 1;
-  background-color: var(--gray1);
 }

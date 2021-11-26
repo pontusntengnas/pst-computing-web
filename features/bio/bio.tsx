@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Stack } from "../core-ui/building-blocks/stack/stack";
-import { BulletList } from "../core-ui/lists/bullet-list/bullet-list";
-import { BodyText } from "../core-ui/text/body-text";
+import { Stack } from "../../core-ui/building-blocks/stack/stack";
+import { BulletList } from "../../core-ui/lists/bullet-list/bullet-list";
+import { BodyText } from "../../core-ui/text/body-text";
 
 interface Props {}
 
@@ -16,7 +16,12 @@ export const Bio: React.VFC<Props> = () => (
         it comes to coding that I do my best to follow every day is:`}
     />
     <BulletList
-      items={["Simplicity.", "Write clear and clean.", "Write tests."]}
+      items={[
+        "Simplicity.",
+        "Add new dependencies with care.",
+        "Write clear and clean.",
+        "Write tests.",
+      ]}
     />
     <BodyText
       text={`I prefer to work in self-moderated teams with people from different

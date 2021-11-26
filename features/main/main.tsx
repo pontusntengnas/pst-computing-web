@@ -1,33 +1,31 @@
 import { NextPage } from "next";
 import Image from "next/image";
 import * as React from "react";
-import { Skill, SocialLink } from "../../types/types";
+import { HorizontalDivider } from "../../core-ui/building-blocks/dividers/horizontal-divider";
+import { Row } from "../../core-ui/building-blocks/row/row";
+import { Space } from "../../core-ui/building-blocks/space/space";
+import { Stack } from "../../core-ui/building-blocks/stack/stack";
+import { toCssVar } from "../../core-ui/colors/colors";
+import { BodyText } from "../../core-ui/text/body-text";
+import { Header } from "../../core-ui/text/header";
+import { Profile } from "../../data-fetchers/profile/types";
 import { About } from "../about/about";
 import { Bio } from "../bio/bio";
 import { Contact } from "../contact/contact";
-import { HorizontalDivider } from "../core-ui/building-blocks/dividers/horizontal-divider";
-import { Row } from "../core-ui/building-blocks/row/row";
-import { Space } from "../core-ui/building-blocks/space/space";
-import { Stack } from "../core-ui/building-blocks/stack/stack";
-import { toCssVar } from "../core-ui/colors/colors";
-import { BodyText } from "../core-ui/text/body-text";
-import { Header } from "../core-ui/text/header";
+import { Resume } from "../resume/resume";
 import { Skills } from "../skills/skills";
 import me from "./images/me.webp";
 
 interface Props {
-  name: string;
-  subTitle: string;
-  skills: Array<Skill>;
-  socialLinks: Array<SocialLink>;
+  profile: Profile;
 }
 
 export const Main: NextPage<Props> = ({
-  name,
-  subTitle,
-  socialLinks,
-  skills,
+  profile: { details, socialLinks, skills },
 }) => {
+  const name = `${details.name} ${details.lastName}`;
+  const subTitle = `${details.description} Based in ${details.location}.`;
+
   return (
     <Stack gap={0} flex={1} height={"100%"}>
       <Space height={20} />
@@ -54,6 +52,7 @@ export const Main: NextPage<Props> = ({
       <HorizontalDivider width={"70%"} />
       <Space height={10} />
       <Bio />
+      <Resume />
       <Skills skills={skills} />
       <About />
     </Stack>

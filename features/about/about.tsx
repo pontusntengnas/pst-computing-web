@@ -1,8 +1,8 @@
 import Link from "next/link";
 import * as React from "react";
-import { Row } from "../core-ui/building-blocks/row/row";
-import { Space } from "../core-ui/building-blocks/space/space";
-import { BodyText } from "../core-ui/text/body-text";
+import { Row } from "../../core-ui/building-blocks/row/row";
+import { Space } from "../../core-ui/building-blocks/space/space";
+import { BodyText } from "../../core-ui/text/body-text";
 
 interface Props {}
 
