@@ -38,6 +38,7 @@ export const Main: NextPage<Props> = ({
               placeholder={"blur"}
               width={170}
               height={170}
+              quality={100}
             />
           </Row>
           <Space width={30} />
