@@ -15,10 +15,10 @@ export const Resume: React.VFC<Props> = () => {
         <Header text={"Resume"} size={2} />
       </Row>
       <Row centerContent>
-        <BodyText text={"Download my resume as a PDF"} />
+        <BodyText text={"Download my "} />
         <Space width={12} />
         <Link href={"/cv-letter.pdf"}>
-          <a>here</a>
+          <a>resume as a PDF here</a>
         </Link>
         <BodyText text={"."} />
       </Row>
