@@ -2,7 +2,8 @@ import type { NextPage } from "next";
 import { fetchProfile } from "../data-fetchers/profile/profile-fetcher";
 import { Profile } from "../data-fetchers/profile/types";
 import { Main } from "../features/main/main";
-import { Page } from "./_page";
+import Page from "./_page";
+
 interface Props {
   profile: Profile;
 }
