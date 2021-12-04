@@ -15,7 +15,7 @@ export const Skills: React.VFC<Props> = ({ skills }) => (
     <Row centerContent>
       <Header text={"What I enjoy working with"} size={2} />
     </Row>
-    <Row flexWrap="wrap" margin={"0px 10%"}>
+    <Row flexWrap={"wrap"} margin={"0px 10%"}>
       {skills.sort(byOrderOfPreference).map((skill) => (
         <Stack key={skill.name}>
           <SkillBox skill={skill} />

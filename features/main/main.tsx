@@ -27,7 +27,13 @@ export const Main: NextPage<Props> = ({
   const subTitle = `${details.description} Based in ${details.location}.`;
 
   return (
-    <Stack gap={0} flex={1} height={"100%"}>
+    <Stack
+      gap={0}
+      flex={1}
+      height={"100%"}
+      paddingLeft={"10px"}
+      paddingRight={"10px"}
+    >
       <Space height={20} />
       <Row backgroundColor={toCssVar("white")} flexWrap={"wrap"} centerContent>
         <>
