@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const Contact: React.VFC<Props> = ({ socialLinks }) => (
-  <Row>
+  <Row flexWrap={"wrap"}>
     {socialLinks.map(({ url, name }, index) => (
       <Row key={name}>
         <TextLink url={url} text={name} newTab />
