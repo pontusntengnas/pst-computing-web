@@ -23,7 +23,7 @@ export const Stack: React.FC<BuildingBlockProps & Props> = (props) => {
       )}
       style={style}
     >
-      {props.children}
+      {children}
     </div>
   );
 };
