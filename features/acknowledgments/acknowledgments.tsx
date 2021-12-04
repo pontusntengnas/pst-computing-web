@@ -449,11 +449,11 @@ export const AcknowledgmentsPage: React.VFC<Props> = () => (
     />
 
     {acknowledgments.sort(byName).map(({ name, licenseText, url }) => (
-      <>
+      <React.Fragment key={name}>
         <Header text={name} size={2} key={name} />
         <TextLink url={url} text={url} />
         <BodyText text={licenseText} />
-      </>
+      </React.Fragment>
     ))}
   </Stack>
 );
