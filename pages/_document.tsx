@@ -14,6 +14,7 @@ class PstComputingDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap"
             rel="stylesheet"
           />
+          <link rel="icon" href="/favicon.svg" />
         </Head>
         <body>
           <Main />
