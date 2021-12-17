@@ -38,7 +38,9 @@ const AboutContent: React.VFC = () => (
     <Space width={10} />
     <BodyText
       centered
-      text={`${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF} [${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA}]`}
+      text={`${
+        process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF
+      } [${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA?.substring(0, 7)}]`}
       size={"SMALL"}
     />
   </>
