@@ -38,7 +38,7 @@ export const HeaderCard: React.VFC<Props> = ({ details, socialLinks }) => {
             quality={100}
           />
         </Row>
-        <Space width={30} />
+        {!isSmallScreen && <Space width={30} />}
         <Stack animations={["fade-in-right"]} centerContent>
           {isSmallScreen && <Space height={10} />}
           <Header text={name} size={isSmallScreen ? 2 : 1} />
