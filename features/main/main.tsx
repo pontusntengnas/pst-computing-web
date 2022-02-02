@@ -32,6 +32,9 @@ export const Main: NextPage<Props> = ({
     <Bio />
     <Resume />
     <Skills skills={skills} />
+    <Space height={10} />
+    <HorizontalDivider width={"70%"} />
+    <Space height={10} />
     <About />
   </Stack>
 );
