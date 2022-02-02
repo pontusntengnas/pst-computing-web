@@ -10,10 +10,15 @@ class PstComputingDocument extends Document {
             name="description"
             content="Pontus Schuster Tengnäs. Full Stack developer, Gothenburg, Sweden. FullStack. Göteborg."
           />
+
           <link
-            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap"
-            rel="stylesheet"
+            rel="preload"
+            href="/font/RobotoMono-Thin.ttf"
+            as="font"
+            type="font/ttf"
+            crossOrigin="anonymous"
           />
+
           <link rel="icon" href="/favicon.svg" />
         </Head>
         <body>
