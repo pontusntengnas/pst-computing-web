@@ -7,6 +7,7 @@ import { useScreenSize } from "../../core-ui/hooks/use-screen-size";
 import { BodyText } from "../../core-ui/text/body-text";
 
 const widthLimit = 1000;
+const contentMargin = 4;
 
 export const About: React.VFC = () => {
   const { width } = useScreenSize();
@@ -31,12 +32,14 @@ export const About: React.VFC = () => {
 const AboutContent: React.VFC = () => (
   <>
     <BodyText
+      margin={contentMargin}
       centered
       text={`${process.env.NEXT_PUBLIC_APP_VERSION} ${process.env.NEXT_PUBLIC_VERCEL_ENV}`}
       size={"SMALL"}
     />
     <Space width={10} />
     <BodyText
+      margin={contentMargin}
       centered
       text={`${
         process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF
@@ -48,6 +51,6 @@ const AboutContent: React.VFC = () => (
 
 const AcknowledgmentsLink: React.VFC = () => (
   <Link href="/acknowledgments">
-    <a style={{ fontSize: 14 }}>Acknowledgments</a>
+    <a style={{ fontSize: 14, margin: contentMargin }}>Acknowledgments</a>
   </Link>
 );

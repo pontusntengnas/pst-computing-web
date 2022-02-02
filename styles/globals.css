@@ -7,6 +7,12 @@
   --black: #000;
 }
 
+@font-face {
+  font-family: "Roboto Mono";
+  font-display: optional;
+  src: url("/font/RobotoMono-Thin.ttf");
+}
+
 html,
 body,
 #__next {
@@ -22,7 +28,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Roboto Mono";
+  font-family: "Roboto Mono", monospace;
 }
 
 a:link {
