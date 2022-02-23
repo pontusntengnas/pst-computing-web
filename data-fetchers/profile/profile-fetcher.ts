@@ -21,7 +21,7 @@ const profile: Profile = {
   socialLinks: [
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/pontus-nilsson-tengn%C3%A4s",
+      url: "https://www.linkedin.com/in/pontus-schuster-tengnas",
       icon: "",
     },
     {
