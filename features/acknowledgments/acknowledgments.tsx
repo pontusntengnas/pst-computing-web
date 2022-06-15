@@ -1,4 +1,5 @@
 import * as React from "react";
+import { SortResult } from "../../common/types/types";
 import { Stack } from "../../core-ui/building-blocks/stack/stack";
 import { TextLink } from "../../core-ui/link/text-link";
 import { BodyText } from "../../core-ui/text/body-text";
@@ -458,7 +459,7 @@ export const AcknowledgmentsPage: React.FC<Props> = () => (
   </Stack>
 );
 
-const byName = (a: Acknowledgment, b: Acknowledgment): -1 | 0 | 1 => {
+const byName = (a: Acknowledgment, b: Acknowledgment): SortResult => {
   const aName = a.name.toLowerCase();
   const bName = b.name.toLowerCase();
 
