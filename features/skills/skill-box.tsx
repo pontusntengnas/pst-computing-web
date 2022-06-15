@@ -8,7 +8,7 @@ interface Props {
   skill: Skill;
 }
 
-export const SkillBox: React.VFC<Props> = ({ skill: { name } }) => (
+export const SkillBox: React.FC<Props> = ({ skill: { name } }) => (
   <Row classes={[styles.skillBox]}>
     <BodyText text={`+ ${name}`} />
   </Row>

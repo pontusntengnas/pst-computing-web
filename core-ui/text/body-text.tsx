@@ -7,12 +7,7 @@ interface Props {
   margin?: string | number;
 }
 
-export const BodyText: React.VFC<Props> = ({
-  text,
-  size,
-  centered,
-  margin,
-}) => {
+export const BodyText: React.FC<Props> = ({ text, size, centered, margin }) => {
   const fontSize = size === "SMALL" ? 14 : undefined;
   const textAlign = centered ? "center" : undefined;
 

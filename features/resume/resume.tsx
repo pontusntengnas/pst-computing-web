@@ -8,7 +8,7 @@ import { Header } from "../../core-ui/text/header";
 
 interface Props {}
 
-export const Resume: React.VFC<Props> = () => {
+export const Resume: React.FC<Props> = () => {
   return (
     <Stack animations={["fade-in"]} flex={1}>
       <Row centerContent>

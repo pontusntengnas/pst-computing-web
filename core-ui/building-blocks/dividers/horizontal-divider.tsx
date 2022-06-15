@@ -5,6 +5,6 @@ interface Props {
   width?: string | number;
 }
 
-export const HorizontalDivider: React.VFC<Props> = ({ width }) => (
+export const HorizontalDivider: React.FC<Props> = ({ width }) => (
   <hr style={{ width }} className={styles.rounded}></hr>
 );

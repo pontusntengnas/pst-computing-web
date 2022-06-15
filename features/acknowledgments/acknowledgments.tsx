@@ -439,7 +439,7 @@ limitations under the License.`,
   },
 ];
 
-export const AcknowledgmentsPage: React.VFC<Props> = () => (
+export const AcknowledgmentsPage: React.FC<Props> = () => (
   <Stack paddingLeft={10} paddingRight={10} width={"100%"}>
     <Header text={"Acknowledgments"} />
     <BodyText

@@ -5,7 +5,7 @@ interface Props {
   size?: 1 | 2 | 3 | 4;
 }
 
-export const Header: React.VFC<Props> = ({ text, size }) => {
+export const Header: React.FC<Props> = ({ text, size }) => {
   const headerSize = size ?? 1;
 
   switch (headerSize) {

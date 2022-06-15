@@ -10,7 +10,7 @@ interface Props {
   skills: Array<Skill>;
 }
 
-export const Skills: React.VFC<Props> = ({ skills }) => (
+export const Skills: React.FC<Props> = ({ skills }) => (
   <Stack animations={["fade-in"]} flex={1}>
     <Row centerContent>
       <Header text={"What I enjoy working with"} size={2} />

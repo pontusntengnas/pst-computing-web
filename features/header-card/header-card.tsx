@@ -18,7 +18,7 @@ interface Props {
 
 const smallScreenLimit = 600;
 
-export const HeaderCard: React.VFC<Props> = ({ details, socialLinks }) => {
+export const HeaderCard: React.FC<Props> = ({ details, socialLinks }) => {
   const { width } = useScreenSize();
   const isSmallScreen = width && width <= smallScreenLimit;
 
