@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import * as React from "react";
 import { HorizontalDivider } from "../../core-ui/building-blocks/dividers/horizontal-divider";
 import { Space } from "../../core-ui/building-blocks/space/space";
 import { Stack } from "../../core-ui/building-blocks/stack/stack";
@@ -30,8 +29,8 @@ export const Main: NextPage<Props> = ({
     <HorizontalDivider width={"70%"} />
     <Space height={10} />
     <Bio />
-    <Resume />
     <Skills skills={skills} />
+    <Resume />
     <Space height={10} />
     <HorizontalDivider width={"70%"} />
     <Space height={10} />
