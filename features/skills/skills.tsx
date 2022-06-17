@@ -1,4 +1,5 @@
 import * as React from "react";
+import { SortResult } from "../../common/types/types";
 import { Row } from "../../core-ui/building-blocks/row/row";
 import { Space } from "../../core-ui/building-blocks/space/space";
 import { Stack } from "../../core-ui/building-blocks/stack/stack";
@@ -10,7 +11,7 @@ interface Props {
   skills: Array<Skill>;
 }
 
-export const Skills: React.VFC<Props> = ({ skills }) => (
+export const Skills: React.FC<Props> = ({ skills }) => (
   <Stack animations={["fade-in"]} flex={1}>
     <Row centerContent>
       <Header text={"What I enjoy working with"} size={2} />
@@ -26,7 +27,7 @@ export const Skills: React.VFC<Props> = ({ skills }) => (
   </Stack>
 );
 
-const byOrderOfPreference = (a: Skill, b: Skill): -1 | 0 | 1 => {
+const byOrderOfPreference = (a: Skill, b: Skill): SortResult => {
   if (a.orderOfPreference === b.orderOfPreference) {
     return 0;
   }

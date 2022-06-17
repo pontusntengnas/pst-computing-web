@@ -7,7 +7,7 @@ interface Props {
   items: Array<string>;
 }
 
-export const BulletList: React.VFC<Props> = ({ items }) => (
+export const BulletList: React.FC<Props> = ({ items }) => (
   <>
     {items.map((item) => (
       <Row key={item}>

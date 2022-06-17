@@ -18,9 +18,9 @@ interface Props {
 
 const smallScreenLimit = 600;
 
-export const HeaderCard: React.VFC<Props> = ({ details, socialLinks }) => {
+export const HeaderCard: React.FC<Props> = ({ details, socialLinks }) => {
   const { width } = useScreenSize();
-  const isSmallScreen = width && width <= smallScreenLimit;
+  const isSmallScreen = width ? width <= smallScreenLimit : false;
 
   const name = `${details.name} ${details.lastName}`;
   const subTitle = `${details.description} Based in ${details.location}.`;
@@ -40,8 +40,11 @@ export const HeaderCard: React.VFC<Props> = ({ details, socialLinks }) => {
         </Row>
         {!isSmallScreen && <Space width={30} />}
         <Stack animations={["fade-in-right"]} centerContent>
-          {isSmallScreen && <Space height={10} />}
-          <Header text={name} size={isSmallScreen ? 2 : 1} />
+          <Header
+            text={name}
+            size={isSmallScreen ? 2 : 1}
+            marginBlockEnd={"0px"}
+          />
           <BodyText text={subTitle} />
           <Contact socialLinks={socialLinks} />
         </Stack>

@@ -7,28 +7,23 @@
   --black: #000;
 }
 
-@font-face {
-  font-family: "Roboto Mono";
-  font-display: optional;
-  src: url("/font/RobotoMono-Thin.ttf");
-}
-
 html,
 body,
 #__next {
   display: flex;
   height: 100%;
   width: 100%;
+  font-family: "Courier New", monospace;
+  margin: 0px;
 }
 
-p,
-a,
-li,
 h1,
 h2,
 h3,
-h4 {
-  font-family: "Roboto Mono", monospace;
+h4,
+h5,
+h6 {
+  font-weight: 300;
 }
 
 a:link {

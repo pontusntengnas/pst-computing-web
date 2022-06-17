@@ -9,7 +9,7 @@ import { BodyText } from "../../core-ui/text/body-text";
 const widthLimit = 1000;
 const contentMargin = 4;
 
-export const About: React.VFC = () => {
+export const About: React.FC = () => {
   const { width } = useScreenSize();
 
   return width && width >= widthLimit ? (
@@ -29,7 +29,7 @@ export const About: React.VFC = () => {
   );
 };
 
-const AboutContent: React.VFC = () => (
+const AboutContent: React.FC = () => (
   <>
     <BodyText
       margin={contentMargin}
@@ -49,7 +49,7 @@ const AboutContent: React.VFC = () => (
   </>
 );
 
-const AcknowledgmentsLink: React.VFC = () => (
+const AcknowledgmentsLink: React.FC = () => (
   <Link href="/acknowledgments">
     <a style={{ fontSize: 14, margin: contentMargin }}>Acknowledgments</a>
   </Link>

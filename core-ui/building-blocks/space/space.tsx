@@ -5,7 +5,7 @@ interface Props {
   height?: number;
 }
 
-export const Space: React.VFC<Props> = ({ width, height }) => (
+export const Space: React.FC<Props> = ({ width, height }) => (
   <div
     style={{
       minWidth: width ? width : 2,

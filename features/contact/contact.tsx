@@ -12,7 +12,7 @@ interface Props {
 
 const smallScreenLimit = 600;
 
-export const Contact: React.VFC<Props> = ({ socialLinks }) => {
+export const Contact: React.FC<Props> = ({ socialLinks }) => {
   const { width } = useScreenSize();
 
   return width && width <= smallScreenLimit ? (
@@ -26,7 +26,7 @@ export const Contact: React.VFC<Props> = ({ socialLinks }) => {
   );
 };
 
-const SocialLinks: React.VFC<Props> = ({ socialLinks }) => (
+const SocialLinks: React.FC<Props> = ({ socialLinks }) => (
   <>
     {socialLinks.map(({ url, name }, index) => (
       <React.Fragment key={name}>

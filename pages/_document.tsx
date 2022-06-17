@@ -11,14 +11,6 @@ class PstComputingDocument extends Document {
             content="Pontus Schuster Tengnäs. Full Stack developer, Gothenburg, Sweden. FullStack. Göteborg."
           />
 
-          <link
-            rel="preload"
-            href="/font/RobotoMono-Thin.ttf"
-            as="font"
-            type="font/ttf"
-            crossOrigin="anonymous"
-          />
-
           <link rel="icon" href="/favicon.svg" />
         </Head>
         <body>

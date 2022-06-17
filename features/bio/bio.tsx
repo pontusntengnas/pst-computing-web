@@ -3,7 +3,7 @@ import { Stack } from "../../core-ui/building-blocks/stack/stack";
 import { BulletList } from "../../core-ui/lists/bullet-list/bullet-list";
 import { BodyText } from "../../core-ui/text/body-text";
 
-export const Bio: React.VFC = () => (
+export const Bio: React.FC = () => (
   <Stack animations={["fade-in"]}>
     <BodyText
       text={`I am a curios person who loves to learn new things which is why I like

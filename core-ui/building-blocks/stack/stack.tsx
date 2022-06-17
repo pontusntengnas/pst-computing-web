@@ -1,4 +1,5 @@
 import * as React from "react";
+import { PropsWithChildren } from "react";
 import { buildStyleSheet } from "../common/build-style-sheet";
 import { BuildingBlockProps } from "../common/shared-props";
 import styles from "./stack.module.css";
@@ -7,7 +8,9 @@ interface Props {
   centerContent?: boolean;
 }
 
-export const Stack: React.FC<BuildingBlockProps & Props> = (props) => {
+export const Stack: React.FC<BuildingBlockProps & PropsWithChildren<Props>> = (
+  props
+) => {
   const { centerContent, ...otherProps } = props;
   const { classes, animations, children } = otherProps;
 

@@ -5,6 +5,7 @@ export interface BuildingBlockProps {
   marginTop?: string | number;
   paddingLeft?: number | string;
   paddingRight?: number | string;
+  padding?: string;
   backgroundColor?: string;
   flexWrap?: string;
   opacity?: number;
