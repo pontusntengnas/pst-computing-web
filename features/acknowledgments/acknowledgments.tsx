@@ -235,7 +235,7 @@ const acknowledgments: Array<Acknowledgment> = [
 ];
 
 export const AcknowledgmentsPage: React.FC<Props> = () => (
-  <Stack paddingLeft={10} paddingRight={10} width={"100%"}>
+  <Stack padding={"18px"} width={"100%"}>
     <Header text={"Acknowledgments"} />
     <BodyText
       text={

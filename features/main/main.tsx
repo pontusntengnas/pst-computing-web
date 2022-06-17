@@ -16,13 +16,7 @@ interface Props {
 export const Main: NextPage<Props> = ({
   profile: { details, socialLinks, skills },
 }) => (
-  <Stack
-    gap={0}
-    flex={1}
-    height={"100%"}
-    paddingLeft={"10px"}
-    paddingRight={"10px"}
-  >
+  <Stack gap={0} flex={1} height={"100%"} padding={"18px"}>
     <Space height={20} />
     <HeaderCard details={details} socialLinks={socialLinks} />
     <Space height={20} />

@@ -14,6 +14,7 @@ body,
   height: 100%;
   width: 100%;
   font-family: "Courier New", monospace;
+  margin: 0px;
 }
 
 h1,
