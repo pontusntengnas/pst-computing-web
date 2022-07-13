@@ -1,16 +1,11 @@
 export interface Profile {
-  details: Details;
-  socialLinks: Array<SocialLink>;
-  skills: Array<Skill>;
-}
-
-export interface Details {
   name: string;
   lastName: string;
-  pictureUrl: string;
-  resumeUrl: string;
+  role: string;
   location: string;
   description: string;
+  email: string;
+  phone: string;
 }
 
 export interface Skill {
@@ -21,6 +16,16 @@ export interface Skill {
 
 export interface SocialLink {
   name: string;
-  icon: string;
+  icon: string | null;
   url: string;
+}
+
+export interface Principle {
+  text: string;
+}
+
+export interface Bio {
+  part_one: string;
+  part_two: string;
+  principles: Array<Principle>;
 }

@@ -1,6 +1,6 @@
 {
   "name": "pst-computing-app",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -10,7 +10,8 @@
     "export": "yarn build && next export",
     "lint": "next lint",
     "prettier": "prettier --write .",
-    "ver": "echo \"NEXT_PUBLIC_APP_VERSION=$(cat package.json | jq .version)\" > .env.local && cat .env >> .env.local"
+    "ver": "echo \"NEXT_PUBLIC_APP_VERSION=$(cat package.json | jq .version)\" > .env.local && cat .env >> .env.local",
+    "test": "jest"
   },
   "dependencies": {
     "next": "12.1.6",
@@ -18,12 +19,15 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@types/jest": "^28.1.4",
     "@types/node": "18.0.0",
     "@types/react": "18.0.14",
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "8.5.0",
+    "jest": "^28.1.2",
     "prettier": "2.7.1",
+    "ts-jest": "^28.0.5",
     "typescript": "4.7.3"
   }
 }
