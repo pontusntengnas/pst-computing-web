@@ -7,23 +7,23 @@ import { toCssVar } from "../../core-ui/colors/colors";
 import { useScreenSize } from "../../core-ui/hooks/use-screen-size";
 import { BodyText } from "../../core-ui/text/body-text";
 import { Header } from "../../core-ui/text/header";
-import { Details, SocialLink } from "../../data-fetchers/profile/types";
+import { Profile, SocialLink } from "../../data-fetchers/profile/types";
 import { Contact } from "../contact/contact";
 import me from "./images/me.webp";
 
 interface Props {
-  details: Details;
+  profile: Profile;
   socialLinks: Array<SocialLink>;
 }
 
 const smallScreenLimit = 600;
 
-export const HeaderCard: React.FC<Props> = ({ details, socialLinks }) => {
+export const HeaderCard: React.FC<Props> = ({ profile, socialLinks }) => {
   const { width } = useScreenSize();
   const isSmallScreen = width ? width <= smallScreenLimit : false;
 
-  const name = `${details.name} ${details.lastName}`;
-  const subTitle = `${details.description} Based in ${details.location}.`;
+  const name = `${profile.name} ${profile.lastName}`;
+  const subTitle = `${profile.description} Based in ${profile.location}.`;
 
   return (
     <Row backgroundColor={toCssVar("white")} flexWrap={"wrap"} centerContent>
