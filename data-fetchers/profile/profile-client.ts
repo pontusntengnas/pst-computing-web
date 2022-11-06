@@ -1,13 +1,12 @@
 import { get } from "../http/http";
-import { ApiCollectionResponse, ApiSingleResponse } from "../strapi-cms/types";
 import { Bio, Principle, Profile, Skill, SocialLink } from "./types";
 
 const baseUrl = process.env["PROFILE_API_BASE_URL"];
 const authToken = process.env["PROFILE_API_AUTH_TOKEN"];
 
 /* Profile */
-export const getProfile = async (): Promise<Profile> => {
-  const response = await get<ApiSingleResponse<Profile>>(
+export const getProfile = (): Promise<Profile> =>
+  get<Profile>(
     {
       url: `${baseUrl}/api/profile`,
       headers: { ...authHeader() },
@@ -15,22 +14,18 @@ export const getProfile = async (): Promise<Profile> => {
     isProfile
   );
 
-  return response.data.attributes;
-};
-
-const isProfile = (object: any): object is ApiSingleResponse<Profile> =>
-  isApiSingleResponse(object) &&
-  "name" in object.data.attributes &&
-  "lastName" in object.data.attributes &&
-  "role" in object.data.attributes &&
-  "location" in object.data.attributes &&
-  "description" in object.data.attributes &&
-  "email" in object.data.attributes &&
-  "phone" in object.data.attributes;
+const isProfile = (object: any): object is Profile =>
+  "name" in object &&
+  "lastName" in object &&
+  "role" in object &&
+  "location" in object &&
+  "description" in object &&
+  "email" in object &&
+  "phone" in object;
 
 /* Skills */
-export const getSkills = async (): Promise<Array<Skill>> => {
-  const response = await get<ApiCollectionResponse<Skill>>(
+export const getSkills = (): Promise<Array<Skill>> =>
+  get<Array<Skill>>(
     {
       url: `${baseUrl}/api/skills`,
       headers: { ...authHeader() },
@@ -38,20 +33,15 @@ export const getSkills = async (): Promise<Array<Skill>> => {
     isSkills
   );
 
-  return response.data.map((d) => d.attributes);
-};
-
-const isSkills = (object: any): object is ApiCollectionResponse<Skill> =>
-  isApiCollectionResponse(object) && object?.data.every(isSkill);
+const isSkills = (object: any): object is Array<Skill> =>
+  isArray(object) && object.every(isSkill);
 
 const isSkill = (object: any): object is Skill =>
-  "name" in object.attributes &&
-  "orderOfPreference" in object.attributes &&
-  "url" in object.attributes;
+  "name" in object && "orderOfPreference" in object && "url" in object;
 
 /* Social Links */
-export const getSocialLinks = async (): Promise<Array<SocialLink>> => {
-  const response = await get<ApiCollectionResponse<SocialLink>>(
+export const getSocialLinks = (): Promise<Array<SocialLink>> =>
+  get<Array<SocialLink>>(
     {
       url: `${baseUrl}/api/social-links`,
       headers: { ...authHeader() },
@@ -59,66 +49,35 @@ export const getSocialLinks = async (): Promise<Array<SocialLink>> => {
     isSocialLinks
   );
 
-  return response.data.map((d) => d.attributes);
-};
-
-const isSocialLinks = (
-  object: any
-): object is ApiCollectionResponse<SocialLink> =>
-  isApiCollectionResponse(object) && object?.data.every(isSocialLink);
+const isSocialLinks = (object: any): object is Array<SocialLink> =>
+  isArray(object) && object.every(isSocialLink);
 
 const isSocialLink = (object: any): object is SocialLink =>
-  "name" in object.attributes &&
-  "icon" in object.attributes &&
-  "url" in object.attributes;
+  "name" in object && "icon" in object && "url" in object;
 
 /* Bio */
-interface ApiBio {
-  part_one: string;
-  part_two: string;
-  principles: ApiCollectionResponse<Principle>;
-}
-
-export const getBio = async (): Promise<Bio> => {
-  const response = await get<ApiSingleResponse<ApiBio>>(
+export const getBio = (): Promise<Bio> =>
+  get<Bio>(
     {
-      url: `${baseUrl}/api/bio?populate=%2A`,
+      url: `${baseUrl}/api/bio`,
       headers: { ...authHeader() },
     },
-    isApiBio
+    isBio
   );
 
-  return apiBioToDomainBio(response.data.attributes);
-};
-
-const apiBioToDomainBio = (apiBio: ApiBio): Bio => ({
-  part_one: apiBio.part_one,
-  part_two: apiBio.part_two,
-  principles: apiBio.principles.data.map((apiPrinciple) => ({
-    text: apiPrinciple.attributes.text,
-  })),
-});
-
-const isApiBio = (object: any): object is ApiSingleResponse<ApiBio> =>
-  isApiSingleResponse(object) &&
-  object.data.attributes.principles?.data !== undefined &&
-  Array.isArray(object.data.attributes.principles.data) &&
-  object.data.attributes.principles.data.every(isPrinciple) &&
-  "part_one" in object.data.attributes &&
-  "part_two" in object.data.attributes;
+const isBio = (object: any): object is Bio =>
+  isArray(object?.principles) &&
+  object.principles.every(isPrinciple) &&
+  "part_one" in object &&
+  "part_two" in object;
 
 const isPrinciple = (object: any): object is Principle =>
-  object.attributes.text !== undefined && object.attributes.text !== null;
+  object.text !== undefined && object.text !== null;
 
 /* Utils */
-const isApiCollectionResponse = (
-  object: any
-): object is ApiCollectionResponse<any> =>
-  object?.data !== undefined && Array.isArray(object.data);
-
-const isApiSingleResponse = (object: any): object is ApiSingleResponse<any> =>
-  object?.data?.attributes !== undefined;
+const isArray = (object: any): object is Array<any> =>
+  object !== undefined && object !== null && Array.isArray(object);
 
 const authHeader = () => ({
-  Authorization: `Bearer ${authToken}`,
+  Authorization: `${authToken}`,
 });

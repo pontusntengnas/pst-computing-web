@@ -8,9 +8,7 @@ export default function _404() {
     <Centered>
       <Stack centerContent>
         <BodyText text="404 - Hmm, nothing here!" />
-        <Link href="/">
-          <a>Go back home</a>
-        </Link>
+        <Link href="/">Go back home</Link>
       </Stack>
     </Centered>
   );

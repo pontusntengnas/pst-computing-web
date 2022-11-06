@@ -50,7 +50,7 @@ const AboutContent: React.FC = () => (
 );
 
 const AcknowledgmentsLink: React.FC = () => (
-  <Link href="/acknowledgments">
-    <a style={{ fontSize: 14, margin: contentMargin }}>Acknowledgments</a>
+  <Link href="/acknowledgments" style={{ fontSize: 14, margin: contentMargin }}>
+    Acknowledgments
   </Link>
 );
