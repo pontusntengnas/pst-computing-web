@@ -3,7 +3,7 @@ package handler
 import (
 	"net/http"
 
-	"github.com/pontusntengnas/pst-computing-web/api/common/tools"
+	"github.com/pontusntengnas/pst-computing-web/api-common/tools"
 )
 
 func GetSkills(w http.ResponseWriter, r *http.Request) {

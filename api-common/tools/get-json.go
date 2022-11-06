@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/pontusntengnas/pst-computing-web/api/common/gcp/storage"
+	"github.com/pontusntengnas/pst-computing-web/api-common/gcp/storage"
 )
 
 func GetJson(w http.ResponseWriter, r *http.Request, fileName string) {
