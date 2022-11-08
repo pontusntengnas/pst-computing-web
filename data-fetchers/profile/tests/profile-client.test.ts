@@ -14,7 +14,7 @@ describe("profile-client tests", () => {
 
   it("fetches Profile", async () => {
     const res =
-      '{"data":{"id":1,"attributes":{"name":"alf","lastName":"svensson","location":"swe","role":"ok","description":"senor","createdAt":"2022-06-28T10:58:35.016Z","updatedAt":"2022-06-28T11:01:38.530Z","publishedAt":"2022-06-28T10:58:36.962Z","email":"cool mail","phone":"123"}},"meta":{}}';
+      '{"name":"alf","lastName":"svensson","location":"swe","role":"ok","description":"senor","createdAt":"2022-06-28T10:58:35.016Z","updatedAt":"2022-06-28T11:01:38.530Z","publishedAt":"2022-06-28T10:58:36.962Z","email":"cool mail","phone":"123"}';
 
     global.fetch = jest.fn().mockImplementationOnce(() => {
       return {
@@ -37,7 +37,7 @@ describe("profile-client tests", () => {
   it("validates Profile shape", async () => {
     // missing 'name' property
     const res =
-      '{"data":{"id":1,"attributes":{"lastName":"svensson","location":"swe","role":"ok","description":"senor","createdAt":"2022-06-28T10:58:35.016Z","updatedAt":"2022-06-28T11:01:38.530Z","publishedAt":"2022-06-28T10:58:36.962Z","email":"cool mail","phone":"123"}},"meta":{}}';
+      '{"lastName":"svensson","location":"swe","role":"ok","description":"senor","createdAt":"2022-06-28T10:58:35.016Z","updatedAt":"2022-06-28T11:01:38.530Z","publishedAt":"2022-06-28T10:58:36.962Z","email":"cool mail","phone":"123"}';
 
     global.fetch = jest.fn().mockImplementationOnce(() => {
       return {
@@ -54,7 +54,7 @@ describe("profile-client tests", () => {
 
   it("fetches Skills", async () => {
     const res =
-      '{"data":[{"id":1,"attributes":{"name":"A","orderOfPreference":0,"url":"aurl","createdAt":"2022-06-28T10:55:27.184Z","updatedAt":"2022-06-28T10:56:32.463Z","publishedAt":"2022-06-28T10:56:32.460Z"}},{"id":2,"attributes":{"name":"B","orderOfPreference":0,"url":"b","createdAt":"2022-06-28T10:55:47.687Z","updatedAt":"2022-06-28T10:56:51.268Z","publishedAt":"2022-06-28T10:56:51.266Z"}}],"meta":{"pagination":{"page":1,"pageSize":25,"pageCount":1,"total":2}}}';
+      '[{"name":"A","orderOfPreference":0,"url":"aurl","createdAt":"2022-06-28T10:55:27.184Z","updatedAt":"2022-06-28T10:56:32.463Z","publishedAt":"2022-06-28T10:56:32.460Z"},{"name":"B","orderOfPreference":0,"url":"b","createdAt":"2022-06-28T10:55:47.687Z","updatedAt":"2022-06-28T10:56:51.268Z","publishedAt":"2022-06-28T10:56:51.266Z"}]';
 
     global.fetch = jest.fn().mockImplementationOnce(() => {
       return {
@@ -86,7 +86,7 @@ describe("profile-client tests", () => {
   it("validates Skills shape", async () => {
     // missing 'name' property
     const res =
-      '{"data":[{"id":1,"attributes":{"orderOfPreference":0,"url":"aurl","createdAt":"2022-06-28T10:55:27.184Z","updatedAt":"2022-06-28T10:56:32.463Z","publishedAt":"2022-06-28T10:56:32.460Z"}},{"id":2,"attributes":{"name":"B","orderOfPreference":0,"url":"b","createdAt":"2022-06-28T10:55:47.687Z","updatedAt":"2022-06-28T10:56:51.268Z","publishedAt":"2022-06-28T10:56:51.266Z"}}],"meta":{"pagination":{"page":1,"pageSize":25,"pageCount":1,"total":2}}}';
+      '[{"orderOfPreference":0,"url":"aurl","createdAt":"2022-06-28T10:55:27.184Z","updatedAt":"2022-06-28T10:56:32.463Z","publishedAt":"2022-06-28T10:56:32.460Z"},{"name":"B","orderOfPreference":0,"url":"b","createdAt":"2022-06-28T10:55:47.687Z","updatedAt":"2022-06-28T10:56:51.268Z","publishedAt":"2022-06-28T10:56:51.266Z"}]';
 
     global.fetch = jest.fn().mockImplementationOnce(() => {
       return {
@@ -103,7 +103,7 @@ describe("profile-client tests", () => {
 
   it("fetches Social Links", async () => {
     const res =
-      '{"data":[{"id":1,"attributes":{"name":"hej","icon":null,"url":"www.google.se","createdAt":"2022-07-07T12:14:49.623Z","updatedAt":"2022-07-07T12:14:51.322Z","publishedAt":"2022-07-07T12:14:51.319Z"}}],"meta":{"pagination":{"page":1,"pageSize":25,"pageCount":1,"total":1}}}';
+      '[{"name":"hej","icon":null,"url":"www.google.se","createdAt":"2022-07-07T12:14:49.623Z","updatedAt":"2022-07-07T12:14:51.322Z","publishedAt":"2022-07-07T12:14:51.319Z"}]';
 
     global.fetch = jest.fn().mockImplementationOnce(() => {
       return {
@@ -130,7 +130,7 @@ describe("profile-client tests", () => {
   it("validates Social Links shape", async () => {
     // missing 'name' property
     const res =
-      '{"data":[{"id":1,"attributes":{"icon":null,"url":"www.google.se","createdAt":"2022-07-07T12:14:49.623Z","updatedAt":"2022-07-07T12:14:51.322Z","publishedAt":"2022-07-07T12:14:51.319Z"}}],"meta":{"pagination":{"page":1,"pageSize":25,"pageCount":1,"total":1}}}';
+      '[{"icon":null,"url":"www.google.se","createdAt":"2022-07-07T12:14:49.623Z","updatedAt":"2022-07-07T12:14:51.322Z","publishedAt":"2022-07-07T12:14:51.319Z"}]';
 
     global.fetch = jest.fn().mockImplementationOnce(() => {
       return {
@@ -147,7 +147,7 @@ describe("profile-client tests", () => {
 
   it("fetches Bio", async () => {
     const res =
-      '{"data":{"id":1,"attributes":{"part_one":"hola","part_two":"senofr","createdAt":"2022-07-03T20:32:22.047Z","updatedAt":"2022-07-03T20:32:23.821Z","publishedAt":"2022-07-03T20:32:23.819Z","principles":{"data":[{"id":1,"attributes":{"text":"LOL","createdAt":"2022-07-03T20:31:54.254Z","updatedAt":"2022-07-03T20:31:56.844Z","publishedAt":"2022-07-03T20:31:56.843Z"}},{"id":2,"attributes":{"text":"asd","createdAt":"2022-07-03T20:32:08.626Z","updatedAt":"2022-07-03T20:32:09.486Z","publishedAt":"2022-07-03T20:32:09.485Z"}}]}}},"meta":{}}';
+      '{"part_one":"hola","part_two":"senofr","principles":[{"text":"LOL"},{"text":"asd"}]}';
 
     global.fetch = jest.fn().mockImplementationOnce(() => {
       return {
@@ -170,7 +170,7 @@ describe("profile-client tests", () => {
   it("validates Bio shape", async () => {
     // one principle missing 'text' prop
     const res =
-      '{"data":{"id":1,"attributes":{"part_one":"hola","part_two":"senofr","createdAt":"2022-07-03T20:32:22.047Z","updatedAt":"2022-07-03T20:32:23.821Z","publishedAt":"2022-07-03T20:32:23.819Z","principles":{"data":[{"id":1,"attributes":{"text":"LOL","createdAt":"2022-07-03T20:31:54.254Z","updatedAt":"2022-07-03T20:31:56.844Z","publishedAt":"2022-07-03T20:31:56.843Z"}},{"id":2,"attributes":{"createdAt":"2022-07-03T20:32:08.626Z","updatedAt":"2022-07-03T20:32:09.486Z","publishedAt":"2022-07-03T20:32:09.485Z"}}]}}},"meta":{}}';
+      '{"part_one":"hola","part_two":"senofr","createdAt":"2022-07-03T20:32:22.047Z","updatedAt":"2022-07-03T20:32:23.821Z","publishedAt":"2022-07-03T20:32:23.819Z","principles":[{"text":"LOL","createdAt":"2022-07-03T20:31:54.254Z","updatedAt":"2022-07-03T20:31:56.844Z","publishedAt":"2022-07-03T20:31:56.843Z"},{"createdAt":"2022-07-03T20:32:08.626Z","updatedAt":"2022-07-03T20:32:09.486Z","publishedAt":"2022-07-03T20:32:09.485Z"}]}';
 
     global.fetch = jest.fn().mockImplementationOnce(() => {
       return {

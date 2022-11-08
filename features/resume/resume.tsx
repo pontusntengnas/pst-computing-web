@@ -17,9 +17,7 @@ export const Resume: React.FC<Props> = () => {
       <Row centerContent>
         <BodyText text={"Download my "} />
         <Space width={12} />
-        <Link href={"/cv-letter.pdf"}>
-          <a>resume as a PDF here</a>
-        </Link>
+        <Link href={"/cv-letter.pdf"}>resume as a PDF here</Link>
         <BodyText text={"."} />
       </Row>
     </Stack>

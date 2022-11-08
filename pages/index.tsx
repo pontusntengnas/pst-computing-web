@@ -32,7 +32,7 @@ const Home: NextPage<Props> = ({ profile, skills, socialLinks, bio }) => (
   </Page>
 );
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   return {
     props: {
       profile: await getProfile(),
