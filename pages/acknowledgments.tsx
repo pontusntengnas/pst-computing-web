@@ -14,7 +14,7 @@ const Acknowledgments: NextPage<Props> = ({ profile: { name, role } }) => (
   </Page>
 );
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   return {
     props: {
       profile: await getProfile(),
